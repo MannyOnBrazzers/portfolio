@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "STAR7";
+  src: url("./fonts/STAR7.woff2") format("woff2"),
+    /* Modern Browsers */ url("./fonts/STAR7.woff") format("woff"),
+    /* Some older browsers */ url("./fonts/STAR7.otf") format("opentype"); /* Fallback */
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Densa";
+  src: url("./fonts/Fontspring-DEMO-densa_black.woff2") format("woff2"),
+    /* Modern Browsers */ url("./fonts/Fontspring-DEMO-densa_black.woff")
+      format("woff"),
+    /* Some older browsers */ url("./fonts/Fontspring-DEMO-densa_black.otf")
+      format("opentype"); /* Fallback */
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-Black";
+  src: url("./fonts/Barlow-Black.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-BlackItalic";
+  src: url("./fonts/Barlow-BlackItalic.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-Bold";
+  src: url("./fonts/Barlow-Bold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-BoldItalic";
+  src: url("./fonts/Barlow-BoldItalic.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-ExtraLight";
+  src: url("./fonts/Barlow-ExtraLight.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-Light";
+  src: url("./fonts/Barlow-Light.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow-Regular";
+  src: url("./fonts/Barlow-Regular.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-Bold";
+  src: url("./fonts/Sora-Bold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-ExtraBold";
+  src: url("./fonts/Sora-ExtraBold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-ExtraLight";
+  src: url("./fonts/Sora-ExtraLight.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-Light";
+  src: url("./fonts/Sora-Light.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-Regular";
+  src: url("./fonts/Sora-Regular.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-SemiBold";
+  src: url("./fonts/Sora-SemiBold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora-Thin";
+  src: url("./fonts/Sora-Thin.ttf");
+  font-style: normal;
+  font-display: swap;
+}

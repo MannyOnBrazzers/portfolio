@@ -1,0 +1,33 @@
+.nav {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  border: #2f80ef;
+}
+
+.nav__logo {
+  position: relative;
+  left: -50px;
+  width: 105px;
+  height: 39px;
+}
+
+.nav__links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 50px;
+}
+
+.nav__link {
+  font-family: "Barlow-Regular";
+  color: #ffffffe8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: #7e4ae7;
+}

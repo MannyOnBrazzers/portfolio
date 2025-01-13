@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-radius: 50px;
+  gap: 50px;
+}
+
+.header__logo {
+  margin-left: 100px;
+  width: 40px;
+}
+
+.header__button {
+  width: 125px;
+  height: 45px;
+  outline: none;
+  font-family: "Barlow-Regular";
+  color: white;
+  background: linear-gradient(to left, #ffffff00 15%, #7e4ae7 100%);
+  border-radius: 25px;
+  border: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  transform: scale(1.03);
+  backface-visibility: hidden;
+}
