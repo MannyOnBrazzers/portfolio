@@ -44,6 +44,30 @@ const elements = {
       image: document.querySelector(".overlay__content_container_info-image"),
       imageList: document.querySelector(".overlay__images_list"),
       imageTemplate: document.getElementById("overlay-project-image").content,
+      links: document.querySelector(".overlay__description_header_links"),
+      linkTemplate: document.getElementById("overlay-link-text-button").content,
+      tags: document.querySelector(".overlay__description_header_tags"),
+      tagTemplate: document.getElementById("tag").content,
+      description: document.querySelector(
+        ".overlay__description_content_block_text"
+      ),
+      features: document.querySelector(
+        ".overlay__description_content_block_indent"
+      ),
+      languages: document.querySelector(
+        ".overlay__description_content_block_list"
+      ),
+      languageTemplate: document.getElementById("language").content,
+    },
+    footer: {
+      name: document.querySelector(".overlay__footer_description_name"),
+      description: document.querySelector(".overlay__footer_description_info"),
+      button: document.querySelector(
+        ".overlay__footer_description_info_button"
+      ),
+      header: document.querySelector(".overlay__footer_similar_header"),
+      images: document.querySelector(".overlay__footer_similar_images"),
+      template: document.getElementById("more-work").content,
     },
   },
 };
@@ -315,14 +339,15 @@ function overlayModal(project) {
   overlay.profile.name.textContent = config.profile.name;
   overlay.profile.availability.textContent = "Available for work";
 
-  overlay.project.image.src =
-    project.images.length >= 1 ? project.images[0] : project.images;
+  overlay.project.image.src = project.images.length
+    ? project.images[0]
+    : project.images;
 
-  renderProjectImages(project);
-
+  renderProjectImages();
+  renderProjectInfo();
   overlay.menu.classList.add("opened");
 
-  function renderProjectImages(project) {
+  function renderProjectImages() {
     const { imageList, imageTemplate, image } = overlay.project;
     const navPrev = document.querySelector(".swiper-button-prev");
     const navNext = document.querySelector(".swiper-button-next");
@@ -332,9 +357,9 @@ function overlayModal(project) {
     const hasMultipleImages = project.images.length > 1;
 
     imageList.innerHTML = "";
-    navPrev.style.display = navNext.style.display = hasMultipleImages
-      ? "block"
-      : "none";
+    [navPrev, navNext].forEach(
+      (nav) => (nav.style.display = hasMultipleImages ? "block" : "none")
+    );
     hoverContainer.style.pointerEvents = hasMultipleImages ? "auto" : "none";
 
     if (!hasMultipleImages) return;
@@ -345,7 +370,6 @@ function overlayModal(project) {
     project.images.forEach((imgSrc, index) => {
       const template = imageTemplate.cloneNode(true);
       const img = template.querySelector(".overlay__info-images_more_image");
-
       img.src = imgSrc;
       if (index === 0) img.classList.add("selected");
 
@@ -370,6 +394,113 @@ function overlayModal(project) {
         prevEl: ".swiper-button-prev",
       },
     });
+  }
+
+  function renderProjectInfo() {
+    const { links, tags, description, features, languages } = overlay.project;
+
+    renderLinks();
+    renderTags();
+    renderDescription();
+    renderLanguages();
+    renderFooter();
+
+    function renderLinks() {
+      links.innerHTML = "";
+      project.links.forEach((link) => {
+        const template = overlay.project.linkTemplate.cloneNode(true);
+        const linkElement = template.querySelector("a");
+
+        if (linkElement) {
+          linkElement.textContent = link.label || "";
+          linkElement.href = link.url || "#";
+          linkElement.target = "_blank";
+          linkElement.rel = "noopener noreferrer";
+        }
+
+        links.appendChild(template);
+      });
+    }
+
+    function renderTags() {
+      tags.innerHTML = "";
+      project.tags.forEach((tag) => {
+        const template = overlay.project.tagTemplate.cloneNode(true);
+        template.querySelector(".overlay__description_header_tag").textContent =
+          tag;
+        tags.appendChild(template);
+      });
+    }
+
+    function renderDescription() {
+      description.textContent = project.description;
+      features.innerHTML = project.features
+        .map((feature) => `• ${feature}<br />`)
+        .join("");
+    }
+
+    function renderLanguages() {
+      languages.innerHTML = "";
+
+      project.languages.forEach((language) => {
+        const template = overlay.project.languageTemplate.cloneNode(true);
+
+        template.querySelector(
+          ".overlay__content_block_item_header_name"
+        ).textContent = language.name;
+
+        template.querySelector(
+          ".overlay__content_block_item_header_percentage"
+        ).textContent = `${language.percentage}%`;
+
+        const bars = template.querySelectorAll(
+          ".overlay__content_block_item_bar"
+        );
+        const filledBarsCount = Math.round(
+          (language.percentage / 100) * bars.length
+        );
+
+        bars.forEach((bar, index) => {
+          if (index < filledBarsCount) {
+            bar.classList.add("filled");
+          }
+        });
+
+        languages.appendChild(template);
+      });
+    }
+
+    function renderFooter() {
+      overlay.footer.name.textContent = config.profile.name;
+      overlay.footer.description.textContent = config.profile.brief;
+      overlay.footer.header.textContent = `More by ${config.profile.name}`;
+
+      overlay.footer.images.innerHTML = "";
+
+      config.projects.work.forEach((moreProjects) => {
+        if (moreProjects.name !== project.name) {
+          const template = overlay.footer.template.cloneNode(true);
+          const image = template.querySelector(
+            ".overlay__footer_similar_images_item-image"
+          );
+
+          image.src =
+            moreProjects.images.length >= 1
+              ? moreProjects.images[0]
+              : moreProjects.images;
+
+          template.querySelector(
+            ".overlay__footer_similar_images_item-overlay_title"
+          ).textContent = moreProjects.name;
+
+          image.addEventListener("click", () => {
+            overlayModal(moreProjects);
+          });
+
+          overlay.footer.images.appendChild(template);
+        }
+      });
+    }
   }
 }
 

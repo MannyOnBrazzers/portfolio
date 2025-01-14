@@ -3,6 +3,7 @@ const config = {
     name: "Manny Almodovar",
     role: "Junior Fullstack Developer",
     image: "./images/IMG_3189.jpg",
+    brief: `Junior Fullstack Developer with a sprinkle of gaming`,
     bio: `Equipped for delivering innovative solutions that align with
       business goals and enhance user experience. Whether it's
       developing a sleek, modern website, designing a dynamic
@@ -68,6 +69,11 @@ const config = {
     work: [
       {
         name: "Test Title",
+        description: `The app's user interface is sleek and modern, designed
+          with a flexbox layout to ensure alignment and
+          responsiveness across various screen sizes. Key features
+          include:`,
+        features: ["Contains a lot of things", "Ton of things you'd like"],
         images: [
           "./images/project_placeholder.png",
           "./images/project_placeholder.png",
@@ -77,6 +83,42 @@ const config = {
           "./images/project_placeholder.png",
           "./images/project_placeholder.png",
           "./images/project_placeholder.png",
+        ],
+        links: [
+          { label: "Video Demo", url: "https://www.google.com/" },
+          { label: "GitHub", url: "https://www.google.com/" },
+        ],
+        tags: ["Web Design", "Application"],
+        languages: [
+          { name: "HTML", percentage: 50 },
+          { name: "JavaScript", percentage: 10 },
+        ],
+      },
+      {
+        name: "Test Title 2",
+        description: `The app's user interface is sleek and modern, designed
+          with a flexbox layout to ensure alignment and
+          responsiveness across various screen sizes. Key features
+          include:`,
+        features: ["Contains a lot of things", "Ton of things you'd like"],
+        images: [
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+        ],
+        links: [
+          { label: "Video Demo", url: "https://www.google.com/" },
+          { label: "GitHub", url: "https://www.google.com/" },
+        ],
+        tags: ["Fucking shitter"],
+        languages: [
+          { name: "HTML", percentage: 50 },
+          { name: "JavaScript", percentage: 10 },
         ],
       },
     ],
