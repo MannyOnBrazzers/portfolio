@@ -28,6 +28,23 @@ const elements = {
   overlay: {
     menu: document.querySelector(".overlay"),
     close: document.querySelector(".overlay__close"),
+    title: document.querySelector(".overlay__content_container_info-header"),
+    profile: {
+      image: document.querySelector(
+        ".overlay__content_container_info-profile_image"
+      ),
+      name: document.querySelector(
+        ".overlay__content_container_info-profile_block_name"
+      ),
+      availability: document.querySelector(
+        ".overlay__content_container_info-profile_block_availability"
+      ),
+    },
+    project: {
+      image: document.querySelector(".overlay__content_container_info-image"),
+      imageList: document.querySelector(".overlay__images_list"),
+      imageTemplate: document.getElementById("overlay-project-image").content,
+    },
   },
 };
 
@@ -279,7 +296,8 @@ function projects() {
       project.name;
 
     const elemetImage = template.querySelector(".projects__work_item-image");
-    elemetImage.src = project.image;
+    elemetImage.src =
+      project.images.length >= 1 ? project.images[0] : project.images;
 
     elemetImage.addEventListener("click", () => {
       overlayModal(project);
@@ -288,5 +306,85 @@ function projects() {
     return template;
   }
 }
+
+function overlayModal(project) {
+  const { overlay } = elements;
+
+  overlay.title.textContent = project.name;
+  overlay.profile.image.src = config.profile.image;
+  overlay.profile.name.textContent = config.profile.name;
+  overlay.profile.availability.textContent = "Available for work";
+
+  overlay.project.image.src =
+    project.images.length >= 1 ? project.images[0] : project.images;
+
+  renderProjectImages(project);
+
+  overlay.menu.classList.add("opened");
+
+  function renderProjectImages(project) {
+    const { imageList, imageTemplate, image } = overlay.project;
+    const navPrev = document.querySelector(".swiper-button-prev");
+    const navNext = document.querySelector(".swiper-button-next");
+    const hoverContainer = document.querySelector(
+      ".overlay__content_container_info-images"
+    );
+    const hasMultipleImages = project.images.length > 1;
+
+    imageList.innerHTML = "";
+    navPrev.style.display = navNext.style.display = hasMultipleImages
+      ? "block"
+      : "none";
+    hoverContainer.style.pointerEvents = hasMultipleImages ? "auto" : "none";
+
+    if (!hasMultipleImages) return;
+
+    const swiperWrapper = document.createElement("div");
+    swiperWrapper.classList.add("swiper-wrapper");
+
+    project.images.forEach((imgSrc, index) => {
+      const template = imageTemplate.cloneNode(true);
+      const img = template.querySelector(".overlay__info-images_more_image");
+
+      img.src = imgSrc;
+      if (index === 0) img.classList.add("selected");
+
+      img.addEventListener("click", () => {
+        image.src = imgSrc;
+        swiperWrapper
+          .querySelectorAll(".overlay__info-images_more_image")
+          .forEach((thumb) => thumb.classList.remove("selected"));
+        img.classList.add("selected");
+      });
+
+      swiperWrapper.appendChild(template);
+    });
+
+    imageList.appendChild(swiperWrapper);
+
+    new Swiper(imageList, {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Listeners                                 */
+/* -------------------------------------------------------------------------- */
+
+elements.overlay.menu.addEventListener("click", (event) => {
+  if (event.target === elements.overlay.menu) {
+    elements.overlay.menu.classList.remove("opened");
+  }
+});
+
+elements.overlay.close.addEventListener("click", () => {
+  elements.overlay.menu.classList.remove("opened");
+});
 
 initialize();

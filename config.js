@@ -66,8 +66,19 @@ const config = {
       { label: "Liked projects", image: "./images/heart-white.svg", value: 5 },
     ],
     work: [
-      { name: "Test Title", image: "./images/project_placeholder.png" },
-      { name: "Test Title", image: "./images/project_placeholder.png" },
+      {
+        name: "Test Title",
+        images: [
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+          "./images/project_placeholder.png",
+        ],
+      },
     ],
   },
 };

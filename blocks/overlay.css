@@ -5,8 +5,8 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
+  z-index: 1;
+  display: flex;
   visibility: hidden;
   padding: 0;
   opacity: 0;
@@ -43,6 +43,7 @@
   width: 100%;
   height: 95%;
   overflow-y: auto;
+  z-index: 2;
 }
 
 .overlay__content_sidebar {
@@ -127,15 +128,7 @@
 }
 
 .overlay__content_container_info-header {
-  color: #ffffffe8;
   margin: 0;
-}
-
-.overlay__content_container_info-header .highlight {
-  color: #7e4ae7;
-  background: linear-gradient(90deg, #7e4ae7, #ffffffe8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .overlay__content_container_info-profile {
@@ -181,12 +174,6 @@
   gap: 10px;
 }
 
-.overlay__content_container_info-profile_button {
-  width: 35px;
-  height: 35px;
-  background-color: #9b8dff;
-}
-
 .overlay__content_container_info-profile_button_text {
   font-size: 15px;
   height: 35px;
@@ -206,6 +193,39 @@
   overflow: hidden;
 }
 
+.overlay__images-nav.swiper-button-prev,
+.overlay__images-nav.swiper-button-next {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.overlay__images-nav.swiper-button-prev:after,
+.overlay__images-nav.swiper-button-next:after {
+  font-size: 20px !important;
+  color: white !important;
+  content: "";
+}
+
+.swiper-button-prev:after {
+  content: "❮" !important;
+  font-size: 20px;
+  color: white;
+}
+
+.swiper-button-next:after {
+  content: "❯" !important;
+  font-size: 20px;
+  color: white;
+}
+
 .overlay__content_container_info-image {
   width: 100%;
   height: 100%;
@@ -221,9 +241,20 @@
   left: 0;
   padding: 55px 25px 15px 25px;
   box-sizing: border-box;
-  gap: 10px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   transition: bottom 0.6s ease;
+}
+
+.overlay__images_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  overflow: hidden;
 }
 
 .overlay__content_container_info-images:hover
@@ -234,6 +265,7 @@
 .overlay__info-images_more_image {
   width: 175px;
   height: 125px;
+  border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease;
   will-change: transform;
@@ -243,6 +275,10 @@
 .overlay__info-images_more_image:hover {
   transform: scale(1.02);
   backface-visibility: hidden;
+}
+
+.overlay__info-images_more_image.selected {
+  border: 1px solid #7e4ae7;
 }
 
 .overlay__content_container_info_description {
