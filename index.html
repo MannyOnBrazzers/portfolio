@@ -78,121 +78,8 @@
             </h2>
           </div>
 
-          <ul class="projects__stats">
-            <li class="projects__stats_item">
-              <img
-                src="./images/fire.svg"
-                alt="Stats Image"
-                class="projects__stats_item-image"
-              />
-              <div class="projects__stats_item_block">
-                <h3 class="projects__stats_item_block-title">195</h3>
-                <h5 class="projects__stats_item_block-description">
-                  Projects completed
-                </h5>
-              </div>
-            </li>
-            <li class="projects__stats_item">
-              <img
-                src="./images/coffee.svg"
-                alt="Stats Image"
-                class="projects__stats_item-image"
-                style="width: 45px; height: 45px"
-              />
-              <div class="projects__stats_item_block">
-                <h3 class="projects__stats_item_block-title">8734</h3>
-                <h5 class="projects__stats_item_block-description">
-                  Cup of coffee
-                </h5>
-              </div>
-            </li>
-            <li class="projects__stats_item">
-              <img
-                src="./images/heart-white.svg"
-                alt="Stats Image"
-                class="projects__stats_item-image"
-              />
-              <div class="projects__stats_item_block">
-                <h3 class="projects__stats_item_block-title">20</h3>
-                <h5 class="projects__stats_item_block-description">
-                  Liked projects
-                </h5>
-              </div>
-            </li>
-            <li class="projects__stats_item">
-              <img
-                src="./images/fire.svg"
-                alt="Stats Image"
-                class="projects__stats_item-image"
-              />
-              <div class="projects__stats_item_block">
-                <h3 class="projects__stats_item_block-title">195</h3>
-                <h5 class="projects__stats_item_block-description">
-                  Projects completed
-                </h5>
-              </div>
-            </li>
-          </ul>
-
-          <ul class="projects__work">
-            <li class="projects__work_item">
-              <img
-                src="./images/project_placeholder.png"
-                alt="Project Image"
-                class="projects__work_item-image"
-              />
-              <div class="projects__work_item-overlay">
-                <h3 class="projects__work_item-overlay_title">Project Title</h3>
-                <button
-                  class="projects__work_item-overlay_heart portfolio__button_shape"
-                >
-                  <img
-                    src="./images/heart.svg"
-                    alt="Button Image"
-                    class="projects__work_item-overlay__image portfolio__button_shape_image"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="projects__work_item">
-              <img
-                src="./images/project_placeholder.png"
-                alt="Project Image"
-                class="projects__work_item-image"
-              />
-              <div class="projects__work_item-overlay">
-                <h3 class="projects__work_item-overlay_title">Project Title</h3>
-                <button
-                  class="projects__work_item-overlay_heart portfolio__button_shape"
-                >
-                  <img
-                    src="./images/heart.svg"
-                    alt="Button Image"
-                    class="projects__work_item-overlay__image portfolio__button_shape_image"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="projects__work_item">
-              <img
-                src="./images/project_placeholder.png"
-                alt="Project Image"
-                class="projects__work_item-image"
-              />
-              <div class="projects__work_item-overlay">
-                <h3 class="projects__work_item-overlay_title">Project Title</h3>
-                <button
-                  class="projects__work_item-overlay_heart portfolio__button_shape"
-                >
-                  <img
-                    src="./images/heart.svg"
-                    alt="Button Image"
-                    class="projects__work_item-overlay__image portfolio__button_shape_image"
-                  />
-                </button>
-              </div>
-            </li>
-          </ul>
+          <ul class="projects__stats"></ul>
+          <ul class="projects__work"></ul>
         </section>
       </main>
 
@@ -805,6 +692,44 @@
       </li>
     </template>
   </body>
+
+  <template id="project-stat">
+    <li class="projects__stats_item">
+      <img
+        src="./images/fire.svg"
+        alt="Stats Image"
+        class="projects__stats_item-image"
+      />
+      <div class="projects__stats_item_block">
+        <h3 class="projects__stats_item_block-title">195</h3>
+        <h5 class="projects__stats_item_block-description">
+          Projects completed
+        </h5>
+      </div>
+    </li>
+  </template>
+
+  <template id="project">
+    <li class="projects__work_item">
+      <img
+        src="./images/project_placeholder.png"
+        alt="Project Image"
+        class="projects__work_item-image"
+      />
+      <div class="projects__work_item-overlay">
+        <h3 class="projects__work_item-overlay_title">Project Title</h3>
+        <button
+          class="projects__work_item-overlay_heart portfolio__button_shape"
+        >
+          <img
+            src="./images/heart.svg"
+            alt="Button Image"
+            class="projects__work_item-overlay__image portfolio__button_shape_image"
+          />
+        </button>
+      </div>
+    </li>
+  </template>
 
   <script src="config.js"></script>
   <script type="module" src="script.js"></script>
