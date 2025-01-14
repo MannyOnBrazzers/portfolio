@@ -34,10 +34,10 @@
   font-family: "Barlow-Bold";
   font-size: 400px;
   z-index: -1;
-  color: transparent; /* Keeps the fill empty */
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.028); /* Adds an outline */
-  -webkit-text-fill-color: transparent; /* Ensures no fill overlaps */
-  letter-spacing: 10px; /* Optional: Adjust spacing for better alignment */
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.028);
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 10px;
 }
 
 .home__bio_info {
@@ -128,16 +128,16 @@
   border: 1px solid #462981;
   border-radius: 30px;
   transform: rotate(3deg);
-  overflow: hidden; /* Ensures the image does not overflow outside the block */
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers the image within the block */
+  justify-content: center;
 }
 
 .home__bio_image {
-  width: 100%; /* Makes the image stretch to fit the block horizontally */
-  height: 100%; /* Ensures the image covers the entire height */
-  object-fit: cover; /* Scales the image to cover the block while cropping excess */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: scale(1.2);
 }
 

@@ -1,0 +1,158 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  gap: 50px;
+}
+
+.projects__header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.projects__header_title {
+  font-family: "Sora-SemiBold";
+  font-size: 25px;
+  color: #ffffffe8;
+  margin: 0;
+}
+
+.projects__header_desciption {
+  font-family: "Sora-ExtraBold";
+  font-size: 55px;
+  color: #ffffffe8;
+  margin: 0;
+}
+
+.projects__header_desciption .highlight {
+  color: #7e4ae7;
+  background: linear-gradient(90deg, #7e4ae7, #ffffffe8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects__stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.projects__stats_item {
+  display: flex;
+  gap: 20px;
+}
+
+.projects__stats_item-image {
+  width: 40px;
+  height: 40px;
+}
+
+.projects__stats_item_block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  height: 65px;
+  gap: 5px;
+}
+
+.projects__stats_item_block-title {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Sora-Bold";
+  margin: 0;
+}
+
+.projects__stats_item_block-description {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Barlow-ExtraLight";
+  margin: 0;
+}
+
+.projects__work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin: 0;
+}
+
+.projects__work_item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 420px;
+  height: 300px;
+  background-color: #46298169;
+  border-radius: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.projects__work_item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects__work_item-overlay {
+  display: flex;
+  position: absolute;
+  align-items: end;
+  justify-content: space-between;
+  bottom: -100%;
+  right: 0;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  padding: 10px 20px;
+  box-sizing: border-box;
+  transition: bottom 0.3s ease;
+}
+
+.projects__work_item-overlay_title {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Sora-SemiBold";
+  margin: 0;
+}
+
+.projects__work_item:hover .projects__work_item-overlay {
+  bottom: 0;
+}
+
+.portfolio__button_shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffffe8;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 0;
+  transition: transform 0.2s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.portfolio__button_shape:hover {
+  transform: scale(1.05);
+  backface-visibility: hidden;
+}
+
+.portfolio__button_shape_image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
