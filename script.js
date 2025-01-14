@@ -19,6 +19,16 @@ const elements = {
     list: document.querySelector(".skills__content"),
     template: document.getElementById("skill").content,
   },
+  projects: {
+    stats: document.querySelector(".projects__stats"),
+    statTemplate: document.getElementById("project-stat").content,
+    work: document.querySelector(".projects__work"),
+    workTemplate: document.getElementById("project").content,
+  },
+  overlay: {
+    menu: document.querySelector(".overlay"),
+    close: document.querySelector(".overlay__close"),
+  },
 };
 
 /* -------------------------------------------------------------------------- */
@@ -73,6 +83,8 @@ function initialize() {
         home();
       } else if (target === "#skills") {
         skills();
+      } else if (target === "#projects") {
+        projects();
       }
     });
   });
@@ -205,6 +217,73 @@ function skills() {
         rangeItems[i].classList.add("active");
       }
     }
+
+    return template;
+  }
+}
+
+function projects() {
+  const { projects } = elements;
+
+  hideAllSections();
+  renderProjectStats();
+  renderProjects();
+  showSection("#projects");
+
+  function renderProjectStats() {
+    projects.stats.innerHTML = "";
+    config.projects.stats.forEach((stat) => {
+      const statElement = createStatElement(stat);
+      projects.stats.appendChild(statElement);
+    });
+  }
+
+  function renderProjects() {
+    projects.work.innerHTML = "";
+    config.projects.work.forEach((project) => {
+      const projectElement = createProjectElement(project);
+      projects.work.appendChild(projectElement);
+    });
+  }
+
+  function createStatElement(stat) {
+    const template = projects.statTemplate.cloneNode(true);
+
+    const titleElement = template.querySelector(
+      ".projects__stats_item_block-title"
+    );
+    const descriptionElement = template.querySelector(
+      ".projects__stats_item_block-description"
+    );
+
+    descriptionElement.textContent = stat.label;
+    const countUp = new CountUp(titleElement, stat.value, {
+      duration: 5,
+      useEasing: true,
+      separator: ",",
+    });
+
+    if (!countUp.error) {
+      countUp.start();
+    } else {
+      console.error(countUp.error);
+    }
+
+    return template;
+  }
+
+  function createProjectElement(project) {
+    const template = projects.workTemplate.cloneNode(true);
+
+    template.querySelector(".projects__work_item-overlay_title").textContent =
+      project.name;
+
+    const elemetImage = template.querySelector(".projects__work_item-image");
+    elemetImage.src = project.image;
+
+    elemetImage.addEventListener("click", () => {
+      overlayModal(project);
+    });
 
     return template;
   }

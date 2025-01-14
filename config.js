@@ -59,4 +59,15 @@ const config = {
     { label: "Lua", image: "./images/lua.svg", efficiency: 5 },
     { label: "Jira", image: "./images/jira.svg", efficiency: 3 },
   ],
+  projects: {
+    stats: [
+      { label: "Projects completed", image: "./images/fire.svg", value: 5 },
+      { label: "Cup of coffee", image: "./images/coffee.svg", value: 5 },
+      { label: "Liked projects", image: "./images/heart-white.svg", value: 5 },
+    ],
+    work: [
+      { name: "Test Title", image: "./images/project_placeholder.png" },
+      { name: "Test Title", image: "./images/project_placeholder.png" },
+    ],
+  },
 };
