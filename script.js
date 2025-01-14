@@ -14,11 +14,26 @@ const elements = {
     stats: document.querySelector(".home__stats"),
     statTemplate: document.getElementById("stat").content,
   },
+  skills: {
+    page: document.getElementById("skills"),
+    list: document.querySelector(".skills__content"),
+    template: document.getElementById("skill").content,
+  },
 };
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+
+function animateElement(element, duration = 1000) {
+  element.style.display = "flex";
+  element.style.opacity = "0";
+
+  setTimeout(() => {
+    element.style.transition = `opacity ${duration / 1000}s ease`;
+    element.style.opacity = "1";
+  }, 10);
+}
 
 function hideAllSections() {
   document.querySelectorAll("main section").forEach((section) => {
@@ -29,13 +44,7 @@ function hideAllSections() {
 function showSection(id = window.location.hash, duration = 1000) {
   const section = document.querySelector(id);
   if (section) {
-    section.style.display = "flex";
-    section.style.opacity = "0";
-
-    setTimeout(() => {
-      section.style.transition = `opacity ${duration / 1000}s ease`;
-      section.style.opacity = "1";
-    }, 10);
+    animateElement(section);
   }
 
   updateActiveLink(id);
@@ -62,6 +71,8 @@ function initialize() {
 
       if (target === "#home") {
         home();
+      } else if (target === "#skills") {
+        skills();
       }
     });
   });
@@ -157,6 +168,42 @@ function home() {
       countUp.start();
     } else {
       console.error(countUp.error);
+    }
+
+    return template;
+  }
+}
+
+function skills() {
+  const { skills } = elements;
+
+  hideAllSections();
+
+  renderSkills();
+  showSection("#skills");
+
+  function renderSkills() {
+    skills.list.innerHTML = "";
+    config.skills.forEach((skill) => {
+      const skillElement = createSkillElement(skill);
+      skills.list.appendChild(skillElement);
+    });
+  }
+
+  function createSkillElement(skill) {
+    const template = skills.template.cloneNode(true);
+
+    template.querySelector(".skills__content_item-title").textContent =
+      skill.label;
+    template.querySelector(".skills__content_item-image").src = skill.image;
+
+    const rangeItems = template.querySelectorAll(
+      ".skills__content_item-range_item"
+    );
+    for (let i = 0; i < skill.efficiency; i++) {
+      if (rangeItems[i]) {
+        rangeItems[i].classList.add("active");
+      }
     }
 
     return template;
