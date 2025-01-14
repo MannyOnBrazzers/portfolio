@@ -48,16 +48,11 @@
 }
 
 .home__bio_info_intro {
-  font-family: "Sora-SemiBold";
-  font-size: 25px;
   color: #ffffffe8;
   margin-bottom: 0;
 }
 
 .home__bio_info_title {
-  font-family: "Sora-ExtraBold";
-  font-size: 55px;
-  color: #ffffffe8;
   margin: 0;
 }
 
@@ -71,8 +66,6 @@
 .home__bio_info_text {
   line-height: 18px;
   width: 450px;
-  font-family: "Sora-Regular";
-  font-size: 14px;
   color: #ffffffaf;
   margin-top: 0;
 }
@@ -156,8 +149,6 @@
 }
 
 .home__stats_item-title {
-  font-family: "Sora-ExtraBold";
-  font-size: 55px;
   color: #ffffffe8;
   margin: 0;
 }
@@ -165,8 +156,25 @@
 .home__stats_item-description {
   line-height: 18px;
   width: 70px;
-  font-family: "Sora-Regular";
-  font-size: 14px;
   color: #ffffffaf;
   margin-top: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     BEM                                    */
+/* -------------------------------------------------------------------------- */
+
+.portfolio-text-small {
+  font-family: "Sora-Regular";
+  font-size: 14px;
+}
+
+.portfolio-text-medium {
+  font-family: "Sora-SemiBold";
+  font-size: 25px;
+}
+
+.portfolio-text-large {
+  font-family: "Sora-ExtraBold";
+  font-size: 55px;
 }

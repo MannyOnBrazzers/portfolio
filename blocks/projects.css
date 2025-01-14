@@ -13,15 +13,11 @@
 }
 
 .projects__header_title {
-  font-family: "Sora-SemiBold";
-  font-size: 25px;
   color: #ffffffe8;
   margin: 0;
 }
 
 .projects__header_desciption {
-  font-family: "Sora-ExtraBold";
-  font-size: 55px;
   color: #ffffffe8;
   margin: 0;
 }
@@ -155,4 +151,16 @@
   width: 50%;
   height: 50%;
   object-fit: cover;
+}
+
+.portfolio__indent {
+  padding-left: 25px;
+}
+
+.portfolio_profile_image_circle {
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 50%;
 }
