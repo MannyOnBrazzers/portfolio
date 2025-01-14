@@ -28,6 +28,11 @@
   transition: color 0.3s ease;
 }
 
+.nav__link.active {
+  color: #7e4ae7;
+  font-weight: bold;
+}
+
 .nav__link:hover {
   color: #7e4ae7;
 }

@@ -1,5 +1,5 @@
 .projects {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: relative;
   width: 100%;

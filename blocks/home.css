@@ -56,7 +56,7 @@
   margin: 0;
 }
 
-.home__bio_info_title .highlight {
+.highlight {
   color: #7e4ae7;
   background: linear-gradient(90deg, #7e4ae7, #ffffffe8);
   -webkit-background-clip: text;
@@ -88,6 +88,7 @@
   border-radius: 20px;
   background: none;
   gap: 10px;
+  text-decoration: none;
   transition: transform 0.2s ease;
   will-change: transform;
   cursor: pointer;

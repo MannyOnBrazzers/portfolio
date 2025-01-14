@@ -35,103 +35,22 @@
         <section id="home" class="home">
           <div class="home__bio">
             <div class="home__bio_info">
-              <h3 class="home__bio_info_intro portfolio-text-medium">
-                Hey, I am Manny
-              </h3>
-              <h2 class="home__bio_info_title portfolio-text-large">
-                <span class="highlight">Junior Fullstack</span>
-                <span class="highlight">Developer.</span>
-              </h2>
-              <p class="home__bio_info_text portfolio-text-small">
-                <span></span>
-                Equipped for delivering innovative solutions that align with
-                business goals and enhance user experience. Whether it's
-                developing a sleek, modern website, designing a dynamic
-                application, or optimizing workflows for scalability and
-                performance, I thrive on turning ideas into reality. Let’s
-                create something amazing together!
-              </p>
-              <div class="home__bio_social">
-                <button class="home__bio_social-button">
-                  <span class="home__bio_social-button_text">Download CV</span>
-                  <img
-                    src="./images/download-solid.svg"
-                    alt="Button Icon"
-                    class="home__bio_social-icon"
-                  />
-                </button>
-                <button
-                  class="home__bio_social-button circle"
-                  onclick="window.location.href='https://www.linkedin.com/in/manny-almodovar/';"
-                >
-                  <img
-                    src="./images/linkedin-brands-solid.svg"
-                    alt="Button Icon"
-                    class="home__bio_social-icon"
-                  />
-                </button>
-                <button
-                  class="home__bio_social-button circle"
-                  onclick="window.location.href='https://x.com/MannyOnBrazzers';"
-                >
-                  <img
-                    src="./images/square-x-twitter-brands-solid.svg"
-                    alt="Button Icon"
-                    class="home__bio_social-icon"
-                  />
-                </button>
-                <button
-                  class="home__bio_social-button circle"
-                  onclick="window.location.href='https://www.instagram.com/mannyalmodovar/';"
-                >
-                  <img
-                    src="./images/square-instagram-brands-solid.svg"
-                    alt="Button Icon"
-                    class="home__bio_social-icon"
-                  />
-                </button>
-                <button
-                  class="home__bio_social-button circle"
-                  onclick="window.location.href='https://discordapp.com/users/284812973036404736';"
-                >
-                  <img
-                    src="./images/discord-brands-solid.svg"
-                    alt="Button Icon"
-                    class="home__bio_social-icon"
-                  />
-                </button>
-              </div>
+              <h3 class="home__bio_info_intro portfolio-text-medium"></h3>
+              <h2
+                class="home__bio_info_title portfolio-text-large highlight"
+              ></h2>
+              <p class="home__bio_info_text portfolio-text-small"></p>
+              <div class="home__bio_social"></div>
             </div>
             <div class="home__bio_block">
-              <img src="./images/IMG_3189.jpg" alt="" class="home__bio_image" />
+              <img
+                src="./images/IMG_3189.jpg"
+                alt="Profile Image"
+                class="home__bio_image"
+              />
             </div>
           </div>
-          <ul class="home__stats">
-            <li class="home__stats_item">
-              <h2 class="home__stats_item-title portfolio-text-large">3</h2>
-              <span class="home__stats_item-description portfolio-text-small"
-                >Years of Experience</span
-              >
-            </li>
-            <li class="home__stats_item">
-              <h2 class="home__stats_item-title portfolio-text-large">10+</h2>
-              <span class="home__stats_item-description portfolio-text-small"
-                >Projects Completed</span
-              >
-            </li>
-            <li class="home__stats_item">
-              <h2 class="home__stats_item-title portfolio-text-large">8</h2>
-              <span class="home__stats_item-description portfolio-text-small"
-                >Technical Skills</span
-              >
-            </li>
-            <li class="home__stats_item">
-              <h2 class="home__stats_item-title portfolio-text-large">5</h2>
-              <span class="home__stats_item-description portfolio-text-small"
-                >Happy Clients</span
-              >
-            </li>
-          </ul>
+          <ul class="home__stats"></ul>
         </section>
 
         <section id="skills" class="skills">
@@ -1024,7 +943,48 @@
         </div>
       </div>
     </div>
+
+    <template id="download-button">
+      <a
+        class="home__bio_social-button"
+        href="./path/to/your/cv.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="home__bio_social-button_text">Download CV</span>
+        <img
+          src="./images/download-solid.svg"
+          alt="Button Icon"
+          class="home__bio_social-icon"
+        />
+      </a>
+    </template>
+
+    <template id="social-button">
+      <a
+        class="home__bio_social-button circle"
+        href="https://www.linkedin.com/in/manny-almodovar/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./images/linkedin-brands-solid.svg"
+          alt="Button Icon"
+          class="home__bio_social-icon"
+        />
+      </a>
+    </template>
+
+    <template id="stat">
+      <li class="home__stats_item">
+        <h2 class="home__stats_item-title portfolio-text-large">3</h2>
+        <span class="home__stats_item-description portfolio-text-small"
+          >Years of Experience</span
+        >
+      </li>
+    </template>
   </body>
 
-  <script src="script.js"></script>
+  <script src="config.js"></script>
+  <script type="module" src="script.js"></script>
 </html>
