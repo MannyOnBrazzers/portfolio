@@ -1,4 +1,4 @@
-import { CountUp } from "./node_modules/countup.js/dist/countUp.min.js";
+import { CountUp } from "https://cdn.jsdelivr.net/npm/countup.js@2.0.8/dist/countUp.min.js";
 
 const elements = {
   nav: document.querySelectorAll(".nav__link"),
