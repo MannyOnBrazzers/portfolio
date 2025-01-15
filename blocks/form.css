@@ -1,0 +1,124 @@
+.form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: flex;
+  visibility: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.form.opened {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #534c8b;
+  margin: auto;
+  padding: 36px;
+  border-radius: 10px;
+  width: 358px;
+  height: 300px;
+  gap: 25px;
+}
+
+.form__container_close {
+  position: absolute;
+  background-image: url("../images/close.svg");
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 0.2s ease;
+}
+
+.form__container_close:hover {
+  opacity: 60%;
+}
+
+.form__container_header {
+  text-align: center;
+  color: #ffffffe5;
+  font-size: 20px;
+  font-family: "Sora-SemiBold";
+  margin: 0;
+}
+
+.form__container_inputs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+.form__container_inputs_block {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+
+.form__container_inputs_block_input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.form__container_inputs_block_input_label {
+  color: #ffffffe5;
+  font-size: 12.5px;
+  font-family: "Sora-SemiBold";
+}
+
+.form__container_inputs_block_input_field {
+  color: #ffffffe5;
+  background: #8f88ba;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: "Barlow-Light";
+  margin: 0;
+  height: 25px;
+  outline: none;
+  border: none;
+}
+
+.form__container_inputs_block_input_field.textarea {
+  height: 60px;
+}
+
+.form__container_button {
+  color: #ffffffe5;
+  background: #8f88ba;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: "Barlow-Regular";
+  margin: 0;
+  min-height: 40px;
+  outline: none;
+  border: none;
+  transition: transform 0.2s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.form__container_button:hover {
+  transform: scale(1.02);
+  backface-visibility: hidden;
+}

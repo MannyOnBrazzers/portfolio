@@ -2,6 +2,7 @@ import { CountUp } from "./node_modules/countup.js/dist/countUp.min.js";
 
 const elements = {
   nav: document.querySelectorAll(".nav__link"),
+  contact: document.querySelector(".header__button"),
   home: {
     page: document.getElementById("home"),
     name: document.querySelector(".home__bio_info_intro"),
@@ -69,6 +70,11 @@ const elements = {
       images: document.querySelector(".overlay__footer_similar_images"),
       template: document.getElementById("more-work").content,
     },
+  },
+  form: {
+    menu: document.querySelector(".form"),
+    close: document.querySelector(".form__container_close"),
+    submit: document.querySelector(".form__container_button"),
   },
 };
 
@@ -504,16 +510,40 @@ function overlayModal(project) {
   }
 }
 
+function formModal() {
+  const { form } = elements;
+  form.menu.classList.add("opened");
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  Listeners                                 */
 /* -------------------------------------------------------------------------- */
 
+// Open Form Modal
+elements.contact.addEventListener("click", () => {
+  formModal();
+});
+
+// Close Form Modal
+elements.form.menu.addEventListener("click", (event) => {
+  if (event.target === elements.form.menu) {
+    elements.form.menu.classList.remove("opened");
+  }
+});
+
+// Close Form Modal
+elements.form.close.addEventListener("click", () => {
+  elements.form.menu.classList.remove("opened");
+});
+
+// Close Overlay Modal
 elements.overlay.menu.addEventListener("click", (event) => {
   if (event.target === elements.overlay.menu) {
     elements.overlay.menu.classList.remove("opened");
   }
 });
 
+// Close Overlay Modal
 elements.overlay.close.addEventListener("click", () => {
   elements.overlay.menu.classList.remove("opened");
 });

@@ -224,6 +224,85 @@
           </div>
         </div>
       </div>
+
+      <form action="" class="form" method="POST">
+        <div class="form__container">
+          <button
+            class="form__container_close"
+            id="form-close"
+            type="button"
+          ></button>
+          <h3 class="form__container_header">Contact</h3>
+          <div class="form__container_inputs">
+            <!-- Name Inputs -->
+            <ul class="form__container_inputs_block">
+              <li class="form__container_inputs_block_input">
+                <label
+                  for="first-name"
+                  class="form__container_inputs_block_input_label"
+                  >First Name*</label
+                >
+                <input
+                  type="text"
+                  class="form__container_inputs_block_input_field"
+                  id="first-name"
+                  name="first-name"
+                  required
+                />
+              </li>
+              <li class="form__container_inputs_block_input">
+                <label
+                  for="last-name"
+                  class="form__container_inputs_block_input_label"
+                  >Last Name*</label
+                >
+                <input
+                  type="text"
+                  class="form__container_inputs_block_input_field"
+                  id="last-name"
+                  name="last-name"
+                  required
+                />
+              </li>
+            </ul>
+            <!-- Email Input -->
+            <ul class="form__container_inputs_block">
+              <li class="form__container_inputs_block_input">
+                <label
+                  for="email"
+                  class="form__container_inputs_block_input_label"
+                  >Email*</label
+                >
+                <input
+                  type="email"
+                  class="form__container_inputs_block_input_field"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </li>
+            </ul>
+            <!-- Message Input -->
+            <ul class="form__container_inputs_block">
+              <li class="form__container_inputs_block_input">
+                <label
+                  for="message"
+                  class="form__container_inputs_block_input_label"
+                  >Message*</label
+                >
+                <textarea
+                  class="form__container_inputs_block_input_field textarea"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </li>
+            </ul>
+          </div>
+          <button type="submit" class="form__container_button">Submit</button>
+        </div>
+      </form>
     </div>
 
     <template id="download-button">
@@ -310,15 +389,6 @@
       />
       <div class="projects__work_item-overlay">
         <h3 class="projects__work_item-overlay_title">Project Title</h3>
-        <button
-          class="projects__work_item-overlay_heart portfolio__button_shape"
-        >
-          <img
-            src="./images/heart.svg"
-            alt="Button Image"
-            class="projects__work_item-overlay__image portfolio__button_shape_image"
-          />
-        </button>
       </div>
     </li>
   </template>
@@ -412,15 +482,6 @@
         <h3 class="overlay__footer_similar_images_item-overlay_title">
           Project Title
         </h3>
-        <button
-          class="overlay__footer_similar_images_item-overlay_heart portfolio__button_shape"
-        >
-          <img
-            src="./images/heart.svg"
-            alt="Button Image"
-            class="overlay__footer_similar_images_item-overlay__image portfolio__button_shape_image"
-          />
-        </button>
       </div>
     </li>
   </template>
