@@ -232,75 +232,86 @@
             id="form-close"
             type="button"
           ></button>
-          <h3 class="form__container_header">Contact</h3>
+
+          <div class="form__container_header">
+            <h2 class="form__container_header_description portfolio-text-large">
+              <span class="highlight">Lets discuss,</span>
+              <span class="highlight">on something</span>
+              <span class="highlight">cool together</span>
+            </h2>
+          </div>
+
           <div class="form__container_inputs">
-            <!-- Name Inputs -->
             <ul class="form__container_inputs_block">
               <li class="form__container_inputs_block_input">
-                <label
-                  for="first-name"
-                  class="form__container_inputs_block_input_label"
-                  >First Name*</label
-                >
                 <input
                   type="text"
                   class="form__container_inputs_block_input_field"
-                  id="first-name"
+                  id="input-name"
                   name="first-name"
+                  placeholder="First Name"
                   required
+                />
+                <span
+                  class="form__container_inputs_block_input-error"
+                  id="input-name-error"
+                  >Please fill out this field</span
+                >
+                <img
+                  src="./images/user.svg"
+                  alt="Input Icon"
+                  class="form__container_inputs_block_input_icon"
                 />
               </li>
               <li class="form__container_inputs_block_input">
-                <label
-                  for="last-name"
-                  class="form__container_inputs_block_input_label"
-                  >Last Name*</label
-                >
-                <input
-                  type="text"
-                  class="form__container_inputs_block_input_field"
-                  id="last-name"
-                  name="last-name"
-                  required
-                />
-              </li>
-            </ul>
-            <!-- Email Input -->
-            <ul class="form__container_inputs_block">
-              <li class="form__container_inputs_block_input">
-                <label
-                  for="email"
-                  class="form__container_inputs_block_input_label"
-                  >Email*</label
-                >
                 <input
                   type="email"
                   class="form__container_inputs_block_input_field"
-                  id="email"
+                  id="input-email"
                   name="email"
+                  placeholder="Email"
                   required
+                />
+                <span
+                  class="form__container_inputs_block_input-error"
+                  id="input-email-error"
+                  >Enter a valid email address</span
+                >
+                <img
+                  src="./images/email.svg"
+                  alt="Input Icon"
+                  class="form__container_inputs_block_input_icon"
                 />
               </li>
             </ul>
-            <!-- Message Input -->
+
             <ul class="form__container_inputs_block">
               <li class="form__container_inputs_block_input">
-                <label
-                  for="message"
-                  class="form__container_inputs_block_input_label"
-                  >Message*</label
-                >
                 <textarea
                   class="form__container_inputs_block_input_field textarea"
-                  id="message"
+                  id="input-message"
                   name="message"
                   rows="5"
+                  placeholder="Message"
                   required
                 ></textarea>
+                <span
+                  class="form__container_inputs_block_input-error"
+                  id="input-message-error"
+                  >Please fill out this field</span
+                >
               </li>
             </ul>
+
+            <span class="form__container_inputs_footer"
+              >Or you can reach out manually to
+              mannygraphicdesign@gmail.com</span
+            >
+
+            <button type="submit" class="form__container_inputs_button">
+              Submit
+            </button>
           </div>
-          <button type="submit" class="form__container_button">Submit</button>
         </div>
       </form>
     </div>
@@ -487,5 +498,6 @@
   </template>
 
   <script src="config.js"></script>
+  <script src="validation.js"></script>
   <script type="module" src="script.js"></script>
 </html>
