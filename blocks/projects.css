@@ -35,7 +35,6 @@
   justify-content: space-between;
   width: 100%;
   margin: 0;
-  box-sizing: border-box;
 }
 
 .projects__stats_item {
@@ -126,33 +125,6 @@
   bottom: 0;
 }
 
-.portfolio__button_shape {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  background-color: #ffffffe8;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  padding: 0;
-  transition: transform 0.2s ease;
-  will-change: transform;
-  cursor: pointer;
-}
-
-.portfolio__button_shape:hover {
-  transform: scale(1.05);
-  backface-visibility: hidden;
-}
-
-.portfolio__button_shape_image {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-}
-
 .portfolio__indent {
   padding-left: 25px;
 }
@@ -163,4 +135,114 @@
   max-width: 60px;
   max-height: 60px;
   border-radius: 50%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Responsive Design                             */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1070px) {
+  .projects {
+    gap: 35px;
+  }
+
+  .projects__header_title {
+    font-size: 20px;
+  }
+
+  .projects__header_desciption {
+    font-size: 40px;
+  }
+
+  .projects__stats {
+    padding: 0;
+  }
+
+  .projects__stats_item {
+    gap: 20px;
+  }
+
+  .projects__stats_item-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .projects__stats_item_block {
+    height: 55px;
+  }
+
+  .projects__stats_item_block-title {
+    font-size: 25px;
+  }
+
+  .projects__stats_item_block-description {
+    font-size: 16px;
+  }
+
+  .projects__work {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .projects__work_item {
+    width: 300px;
+    height: 180px;
+  }
+
+  .projects__work_item-overlay {
+    height: 50px;
+  }
+
+  .projects__work_item-overlay_title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projects {
+    gap: 35px;
+  }
+
+  .projects__header_title {
+    font-size: 16px;
+  }
+
+  .projects__header_desciption {
+    font-size: 30px;
+  }
+
+  .projects__stats {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 40px;
+  }
+
+  .projects__stats_item {
+    width: 80px;
+    gap: 20px;
+  }
+
+  .projects__stats_item-image {
+    width: 25px;
+    height: 25px;
+  }
+
+  .projects__stats_item_block {
+    height: 40px;
+  }
+
+  .projects__stats_item_block-title {
+    font-size: 20px;
+  }
+
+  .projects__stats_item_block-description {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projects__stats {
+    gap: 20px;
+  }
 }
