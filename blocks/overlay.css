@@ -36,10 +36,12 @@
 }
 
 .overlay__content {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background: #08060a;
   margin-top: auto;
-  padding: 0 36px 0 0;
+  padding: 0 36px;
   width: 100%;
   height: 95%;
   overflow-y: auto;
@@ -209,6 +211,9 @@
 
 .overlay__images-nav.swiper-button-prev:after,
 .overlay__images-nav.swiper-button-next:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 20px !important;
   color: white !important;
   content: "";
@@ -216,14 +221,10 @@
 
 .swiper-button-prev:after {
   content: "❮" !important;
-  font-size: 20px;
-  color: white;
 }
 
 .swiper-button-next:after {
   content: "❯" !important;
-  font-size: 20px;
-  color: white;
 }
 
 .overlay__content_container_info-image {
@@ -491,7 +492,6 @@
 
 .overlay__footer_similar_images {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
   padding: 0;
@@ -555,4 +555,183 @@
 
 .overlay__content_container.sidebar_open {
   padding-left: 100px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Responsive Design                             */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1070px) {
+  .overlay__content_container_info-header {
+    font-size: 40px;
+  }
+
+  .overlay__content_container_info-images {
+    min-height: 500px;
+    max-height: 500px;
+  }
+
+  .overlay__images-nav.swiper-button-prev,
+  .overlay__images-nav.swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  .overlay__images-nav.swiper-button-prev:after,
+  .overlay__images-nav.swiper-button-next:after {
+    font-size: 15px !important;
+  }
+
+  .overlay__content_container_info-images:hover
+    .overlay__content_container_info-images_more {
+    bottom: -500px;
+  }
+
+  .overlay__description_header_links {
+    gap: 5px;
+  }
+
+  .overlay__description_header_button {
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+  }
+
+  .overlay__description_header_tags {
+    gap: 5px;
+  }
+
+  .overlay__description_header_tag {
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .overlay__content_container_info-header {
+    font-size: 30px;
+  }
+
+  .overlay__content_container_info-profile {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .overlay__content_container_info-profile_details {
+    gap: 10px;
+  }
+
+  .overlay__content_container_info-profile_block_name {
+    font-size: 14px;
+  }
+
+  .overlay__content_container_info-profile_block_availability {
+    font-size: 12px;
+  }
+
+  .overlay__content_container_info-profile_button_text {
+    font-size: 13px;
+    width: 250px;
+  }
+
+  .overlay__content_container_info-images {
+    min-height: 198px;
+    max-height: 198px;
+  }
+
+  .overlay__content_container_info_description {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .overlay__description_header {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .overlay__description_content {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overlay__description_content_block_text {
+    font-size: 14px;
+  }
+
+  .overlay__description_content_block_indent {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .overlay__description_content_block_list {
+    gap: 10px;
+  }
+
+  .overlay__content_block_item_header_name {
+    font-size: 12px;
+  }
+
+  .overlay__content_block_item_header_percentage {
+    font-size: 12px;
+  }
+
+  .overlay__content_block_item_bars {
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .overlay__content_block_item_bar {
+    width: 2px;
+  }
+
+  .overlay__content_container_info_footer {
+    margin-top: 25px;
+  }
+
+  .overlay__footer_header_line {
+    height: 1px;
+  }
+
+  .overlay__footer_description {
+    gap: 15px;
+  }
+
+  .overlay__footer_description_name {
+    font-size: 15px;
+  }
+
+  .overlay__footer_description_info {
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .overlay__footer_description_info_button {
+    font-size: 15px;
+    width: 250px;
+    height: 35px;
+  }
+
+  .overlay__footer_similar_header {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .overlay__footer_similar_images {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .overlay__footer_similar_images_item-overlay {
+    height: 50px;
+  }
+
+  .overlay__footer_similar_images_item-overlay_title {
+    font-size: 14px;
+  }
 }
