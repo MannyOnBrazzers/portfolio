@@ -40,6 +40,9 @@ const elements = {
       availability: document.querySelector(
         ".overlay__content_container_info-profile_block_availability"
       ),
+      button: document.querySelector(
+        ".overlay__content_container_info-profile_button_text"
+      ),
     },
     project: {
       image: document.querySelector(".overlay__content_container_info-image"),
@@ -521,6 +524,14 @@ function formModal() {
 
 // Open Form Modal
 elements.contact.addEventListener("click", () => {
+  formModal();
+});
+
+elements.overlay.footer.button.addEventListener("click", () => {
+  formModal();
+});
+
+elements.overlay.profile.button.addEventListener("click", () => {
   formModal();
 });
 
