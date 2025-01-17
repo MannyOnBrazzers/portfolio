@@ -84,3 +84,61 @@
 .skills__content_item-range_item.active {
   background: #7e4ae7;
 }
+
+/* -------------------------------------------------------------------------- */
+/*                              Responsive Design                             */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .skills {
+    gap: 35px;
+  }
+
+  .skills__header_title {
+    font-size: 20px;
+  }
+
+  .skills__header_desciption {
+    font-size: 40px;
+  }
+
+  .skills__content_item {
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skills {
+    gap: 5px;
+  }
+
+  .skills__header_title {
+    font-size: 16px;
+  }
+
+  .skills__header_desciption {
+    font-size: 30px;
+  }
+
+  .skills__content_item {
+    width: 100px;
+    gap: 15px;
+  }
+
+  .skills__content_item-image {
+    width: 50px;
+  }
+
+  .skills__content_item-title {
+    font-size: 12px;
+  }
+
+  .skills__content_item-range {
+    gap: 3px;
+  }
+
+  .skills__content_item-range_item {
+    width: 7px;
+    height: 7px;
+  }
+}

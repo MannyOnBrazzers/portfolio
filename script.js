@@ -139,7 +139,7 @@ function initialize() {
     });
   });
 
-  home();
+  skills();
 }
 
 function home() {

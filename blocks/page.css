@@ -73,7 +73,6 @@
     padding: 25px;
     min-width: 300px;
     max-width: 100%;
-    gap: 10px;
   }
 
   .page::before {
