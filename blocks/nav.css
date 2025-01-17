@@ -2,14 +2,6 @@
   display: flex;
   margin-left: auto;
   justify-content: center;
-  border: #2f80ef;
-}
-
-.nav__logo {
-  position: relative;
-  left: -50px;
-  width: 105px;
-  height: 39px;
 }
 
 .nav__links {
@@ -35,4 +27,17 @@
 
 .nav__link:hover {
   color: #7e4ae7;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav__links {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav__link {
+    font-size: 12px;
+    gap: 15px;
+  }
 }
