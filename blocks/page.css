@@ -35,3 +35,58 @@
   mix-blend-mode: screen;
   z-index: -1;
 }
+
+@media screen and (max-width: 1500px) {
+  .page {
+    padding: 50px 100px;
+    min-width: 800px;
+    max-width: 100%;
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    padding: 50px;
+    min-width: 600px;
+    max-width: 100%;
+    gap: 30px;
+  }
+
+  .page::before {
+    top: -150px;
+    right: 10px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .page::after {
+    top: 550px;
+    left: -250px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    padding: 25px;
+    min-width: 300px;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .page::before {
+    top: -100px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .page::after {
+    top: 450px;
+    left: -150px;
+    width: 200px;
+    height: 200px;
+  }
+}
