@@ -559,4 +559,32 @@ elements.overlay.close.addEventListener("click", () => {
   elements.overlay.menu.classList.remove("opened");
 });
 
+// Form submission
+elements.form.menu.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(elements.form.menu);
+
+  try {
+    const response = await fetch(elements.form.menu.action, {
+      method: elements.form.menu.method,
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      elements.form.menu.reset();
+      elements.form.menu.classList.remove("opened");
+    } else {
+      alert(
+        "Oops! There was a problem submitting your form. Please try again."
+      );
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+});
+
 initialize();
