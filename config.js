@@ -67,9 +67,30 @@ const config = {
   ],
   projects: {
     stats: [
-      { label: "Projects completed", image: "./images/fire.svg", value: 6 },
-      { label: "Cup of coffee", image: "./images/coffee.svg", value: 8734 },
-      { label: "Liked projects", image: "./images/heart-white.svg", value: 6 },
+      {
+        label: "Projects completed",
+        images: {
+          dark: "./images/fire.svg",
+          light: "./images/fire-black.svg",
+        },
+        value: 6,
+      },
+      {
+        label: "Cup of coffee",
+        images: {
+          dark: "./images/coffee.svg",
+          light: "./images/coffee-black.svg",
+        },
+        value: 8734,
+      },
+      {
+        label: "Liked projects",
+        images: {
+          dark: "./images/heart-white.svg",
+          light: "./images/heart-black.svg",
+        },
+        value: 6,
+      },
     ],
     work: [
       {

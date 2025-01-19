@@ -11,6 +11,19 @@
   height: 35px;
 }
 
+.header__mode {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.header__mode:hover {
+  transform: scale(1.1);
+  backface-visibility: hidden;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                              Responsive Design                             */
 /* -------------------------------------------------------------------------- */

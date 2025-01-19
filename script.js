@@ -318,9 +318,15 @@ function projects() {
     );
 
     const imageElement = template.querySelector(".projects__stats_item-image");
+    const currentTheme = document.documentElement.classList.contains(
+      "light-mode"
+    )
+      ? "light"
+      : "dark";
 
-    imageElement.src = stat.image;
+    imageElement.src = stat.images[currentTheme];
     descriptionElement.textContent = stat.label;
+
     const countUp = new CountUp(titleElement, stat.value, {
       duration: 5,
       useEasing: true,
@@ -591,6 +597,67 @@ elements.form.menu.addEventListener("submit", async (event) => {
     }
   } catch (error) {
     console.error("Error:", error);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modeToggle = document.querySelector(".header__mode");
+  const rootElement = document.documentElement;
+
+  const THEMES = {
+    dark: "dark-mode",
+    light: "light-mode",
+  };
+
+  const ICONS = {
+    dark: {
+      mode: "./images/dark-mode.svg",
+      logo: "./images/logo.png",
+      stats: ["./images/fire.svg", "./images/coffee.svg", "./images/heart.svg"],
+    },
+    light: {
+      mode: "./images/light-mode.svg",
+      logo: "./images/logo-black.png",
+      stats: [
+        "./images/fire-black.svg",
+        "./images/coffee-black.svg",
+        "./images/heart-black.svg",
+      ],
+    },
+  };
+
+  const savedMode = localStorage.getItem("theme") || THEMES.dark;
+  applyTheme(savedMode);
+
+  modeToggle.addEventListener("click", () => {
+    const newMode = rootElement.classList.contains(THEMES.dark)
+      ? THEMES.light
+      : THEMES.dark;
+    applyTheme(newMode);
+  });
+
+  function applyTheme(mode) {
+    rootElement.classList.remove(THEMES.dark, THEMES.light);
+    rootElement.classList.add(mode);
+    localStorage.setItem("theme", mode);
+    updateModeIcon(mode);
+    updateOtherComponents(mode);
+  }
+
+  function updateModeIcon(mode) {
+    modeToggle.src = ICONS[mode === THEMES.dark ? "dark" : "light"].mode;
+    modeToggle.alt = `${mode === THEMES.dark ? "Dark" : "Light"} Mode Icon`;
+  }
+
+  function updateOtherComponents(mode) {
+    const themeData = ICONS[mode === THEMES.dark ? "dark" : "light"];
+    const logo = document.querySelector(".header__logo");
+    const stats = document.querySelectorAll(".projects__stats_item-image");
+
+    logo.src = themeData.logo;
+    stats.forEach((stat, index) => {
+      stat.src = themeData.stats[index] || "";
+    });
   }
 });
 

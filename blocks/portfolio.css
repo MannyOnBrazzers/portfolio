@@ -30,8 +30,8 @@
   height: 45px;
   outline: none;
   font-family: "Barlow-Regular";
-  color: white;
-  background: #9b8dff;
+  color: var(--text-main-color);
+  background: var(--button-color);
   border-radius: 25px;
   border: none;
   transition: transform 0.2s ease, background 0.3s ease;

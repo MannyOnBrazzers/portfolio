@@ -14,19 +14,19 @@
 
 .nav__link {
   font-family: "Barlow-Regular";
-  color: #ffffffe8;
+  color: var(--text-main-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav__link.active {
-  color: #7e4ae7;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
 .nav__link:hover {
-  color: #7e4ae7;
+  color: var(--color-primary);
 }
 
 /* -------------------------------------------------------------------------- */

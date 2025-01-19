@@ -1,0 +1,92 @@
+:root {
+  --background-gradient: #7e4ae771;
+  --highlight: #7e4ae7;
+  --highlight-gradient: #ffffffe8;
+  --text-main-color: #ffffffe8;
+  --text-offset-color: #ffffffaf;
+  --text-status-green: #c8ffbcdc;
+  --text-overlay-title: #ffffffe8;
+  --text-stat-color: #ffffffe8;
+
+  --main-background: #08060a;
+  --color-primary: #7e4ae7;
+  --color-secondary: #462981;
+  --button-color: #9b8dff;
+
+  --tag-color: rgba(255, 255, 255, 0.34);
+  --tag-text-color: #ffffffe8;
+
+  --bar-primary: #7e4ae7;
+  --bar-seconday: #46298169;
+
+  --shadow: rgba(0, 0, 0, 0.5);
+  --modal-background: #08060a;
+  --modal-input-background: #17111c;
+  --modal-input-error: #ffb7b7;
+  --modal-button-disabled-background: #362853;
+  --modal-button-disabled-text: #000;
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode {
+  --background-gradient: #7e4ae771;
+  --highlight: #7e4ae7;
+  --highlight-gradient: #ffffffe8;
+  --text-main-color: #ffffffe8;
+  --text-offset-color: #ffffffaf;
+  --text-status-green: #c8ffbcdc;
+  --text-overlay-title: #ffffffe8;
+  --text-stat-color: #ffffffe8;
+
+  --main-background: #08060a;
+  --color-primary: #7e4ae7;
+  --color-secondary: #462981;
+  --button-color: #9b8dff;
+
+  --tag-color: rgba(255, 255, 255, 0.34);
+  --tag-text-color: #ffffffe8;
+
+  --bar-primary: #7e4ae7;
+  --bar-seconday: #46298169;
+
+  --shadow: rgba(0, 0, 0, 0.5);
+  --modal-background: #08060a;
+  --modal-input-background: #17111c;
+  --modal-input-error: #ffb7b7;
+  --modal-button-disabled-background: #362853;
+  --modal-button-disabled-text: #000;
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light-mode {
+  --background-gradient: #ffffff;
+  --highlight: #7e4ae7;
+  --highlight-gradient: #000000e8;
+  --text-main-color: #000000e8;
+  --text-offset-color: #1a1a1aaf;
+  --text-status-green: #25461d;
+  --text-overlay-title: #ffffffe8;
+  --text-stat-color: #7e4ae7;
+
+  --main-background: #dddddd;
+  --color-primary: #7e4ae7;
+  --color-secondary: #462981;
+  --button-color: #9b8dff;
+
+  --tag-color: rgb(0, 0, 0);
+  --tag-text-color: #ffffffe8;
+
+  --bar-primary: #7e4ae7;
+  --bar-seconday: #46298169;
+
+  --shadow: rgba(0, 0, 0, 0.5);
+  --modal-background: #dddddd;
+  --modal-input-background: #cacaca;
+  --modal-input-error: #ff0000;
+  --modal-button-disabled-background: #362853;
+  --modal-button-disabled-text: #000;
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}

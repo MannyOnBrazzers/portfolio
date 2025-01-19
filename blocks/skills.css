@@ -14,18 +14,21 @@
 }
 
 .skills__header_title {
-  color: #ffffffe8;
+  color: var(--text-main-color);
   margin: 0;
 }
 
 .skills__header_desciption {
-  color: #ffffffe8;
+  color: var(--text-main-color);
   margin: 0;
 }
 
 .skills__header_desciption .highlight {
-  color: #7e4ae7;
-  background: linear-gradient(90deg, #7e4ae7, #ffffffe8);
+  background: linear-gradient(
+    90deg,
+    var(--highlight),
+    var(--highlight-gradient)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -63,7 +66,7 @@
 .skills__content_item-title {
   font-family: "Sora-SemiBold";
   font-size: 15px;
-  color: #ffffff6e;
+  color: var(--text-offset-color);
   margin: 0;
 }
 
@@ -77,12 +80,12 @@
 .skills__content_item-range_item {
   width: 10px;
   height: 10px;
-  background: #46298169;
+  background: var(--bar-seconday);
   border-radius: 50%;
 }
 
 .skills__content_item-range_item.active {
-  background: #7e4ae7;
+  background: var(--bar-primary);
 }
 
 /* -------------------------------------------------------------------------- */

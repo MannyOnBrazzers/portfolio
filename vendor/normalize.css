@@ -22,8 +22,9 @@ html {
 
 body {
   margin: 0;
-  background: #08060a;
+  background: var(--main-background);
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /**
