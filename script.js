@@ -46,8 +46,6 @@ const elements = {
     },
     project: {
       image: document.querySelector(".overlay__content_container_info-image"),
-      imageList: document.querySelector(".overlay__images_list"),
-      imageTemplate: document.getElementById("overlay-project-image").content,
       links: document.querySelector(".overlay__description_header_links"),
       linkTemplate: document.getElementById("overlay-link-text-button").content,
       tags: document.querySelector(".overlay__description_header_tags"),
@@ -123,23 +121,36 @@ function updateActiveLink(activeId) {
 
 function initialize() {
   const { nav } = elements;
+
   nav.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const target = link.getAttribute("href");
       window.history.pushState(null, "", target);
 
-      if (target === "#home") {
-        home();
-      } else if (target === "#skills") {
-        skills();
-      } else if (target === "#projects") {
-        projects();
-      }
+      navigateTo(target);
     });
   });
 
-  home();
+  window.addEventListener("popstate", () => {
+    navigateTo(window.location.hash || "#home");
+  });
+
+  navigateTo(window.location.hash || "#home");
+}
+
+function navigateTo(target) {
+  if (target === "#home") {
+    home();
+  } else if (target === "#skills") {
+    skills();
+  } else if (target === "#projects") {
+    projects();
+  } else {
+    hideAllSections();
+  }
+
+  updateActiveLink(target);
 }
 
 function home() {
@@ -306,6 +317,9 @@ function projects() {
       ".projects__stats_item_block-description"
     );
 
+    const imageElement = template.querySelector(".projects__stats_item-image");
+
+    imageElement.src = stat.image;
     descriptionElement.textContent = stat.label;
     const countUp = new CountUp(titleElement, stat.value, {
       duration: 5,
@@ -357,52 +371,45 @@ function overlayModal(project) {
   overlay.menu.classList.add("opened");
 
   function renderProjectImages() {
-    const { imageList, imageTemplate, image } = overlay.project;
+    const { imageTemplate, image } = overlay.project;
     const navPrev = document.querySelector(".swiper-button-prev");
     const navNext = document.querySelector(".swiper-button-next");
-    const hoverContainer = document.querySelector(
-      ".overlay__content_container_info-images"
-    );
     const hasMultipleImages = project.images.length > 1;
 
-    imageList.innerHTML = "";
+    let currentIndex = 0;
+
     [navPrev, navNext].forEach(
       (nav) => (nav.style.display = hasMultipleImages ? "block" : "none")
     );
-    hoverContainer.style.pointerEvents = hasMultipleImages ? "auto" : "none";
 
     if (!hasMultipleImages) return;
 
-    const swiperWrapper = document.createElement("div");
-    swiperWrapper.classList.add("swiper-wrapper");
+    navNext.replaceWith(navNext.cloneNode(true));
+    navPrev.replaceWith(navPrev.cloneNode(true));
 
-    project.images.forEach((imgSrc, index) => {
-      const template = imageTemplate.cloneNode(true);
-      const img = template.querySelector(".overlay__info-images_more_image");
-      img.src = imgSrc;
-      if (index === 0) img.classList.add("selected");
+    const newNavNext = document.querySelector(".swiper-button-next");
+    const newNavPrev = document.querySelector(".swiper-button-prev");
 
-      img.addEventListener("click", () => {
-        image.src = imgSrc;
-        swiperWrapper
-          .querySelectorAll(".overlay__info-images_more_image")
-          .forEach((thumb) => thumb.classList.remove("selected"));
-        img.classList.add("selected");
-      });
-
-      swiperWrapper.appendChild(template);
+    newNavNext.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % project.images.length;
+      updateMainImage(currentIndex);
     });
 
-    imageList.appendChild(swiperWrapper);
-
-    new Swiper(imageList, {
-      slidesPerView: 5,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+    newNavPrev.addEventListener("click", () => {
+      currentIndex =
+        (currentIndex - 1 + project.images.length) % project.images.length;
+      updateMainImage(currentIndex);
     });
+
+    function updateMainImage(index) {
+      currentIndex = index;
+      image.src = project.images[currentIndex];
+      imageList
+        .querySelectorAll(".overlay__info-images_more_image")
+        .forEach((thumb, thumbIndex) => {
+          thumb.classList.toggle("selected", thumbIndex === currentIndex);
+        });
+    }
   }
 
   function renderProjectInfo() {
