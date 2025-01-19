@@ -18,6 +18,11 @@ const config = {
         download: true,
       },
       {
+        name: "GitHub",
+        image: "./images/github-purple.svg",
+        link: "https://github.com/MannyOnBrazzers",
+      },
+      {
         name: "LinkedIn",
         image: "./images/linkedin-brands-solid.svg",
         link: "https://www.linkedin.com/in/manny-almodovar/",
