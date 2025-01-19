@@ -86,7 +86,7 @@ const config = {
       {
         label: "Liked projects",
         images: {
-          dark: "./images/heart-white.svg",
+          dark: "./images/heart.svg",
           light: "./images/heart-black.svg",
         },
         value: 6,
