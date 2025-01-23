@@ -46,7 +46,7 @@ const config = {
   },
   stats: [
     { label: "Years of Experience", value: 5 },
-    { label: "Projects Completed", value: 6 },
+    { label: "Projects Completed", value: 7 },
     { label: "Technical Skills", value: 13 },
     { label: "Happy Clients", value: 10 },
   ],
@@ -73,7 +73,7 @@ const config = {
           dark: "./images/fire.svg",
           light: "./images/fire-black.svg",
         },
-        value: 6,
+        value: 7,
       },
       {
         label: "Cup of coffee",
@@ -93,6 +93,33 @@ const config = {
       },
     ],
     work: [
+      {
+        name: "Solunify",
+        description: `An open-source, customizable landing page tailored for solar companies, designed to showcase renewable energy solutions with modern aesthetics, intuitive navigation, and performance optimization. Built to help businesses in the solar industry effectively highlight their services, connect with clients, and promote sustainable energy initiatives. This project is not yet fully completed but here is a list of features.`,
+        features: [
+          "Responsive and Mobile-Friendly",
+          "Service Showcase",
+          "Benefits Section",
+          "Contact Form with Lead Capture",
+          "Easy Deployment",
+        ],
+        images: ["./images/solunify/solunify1.png"],
+        links: [
+          {
+            label: "Video Demo",
+            url: "https://mannyonbrazzers.github.io/solunify/",
+          },
+          {
+            label: "GitHub",
+            url: "https://github.com/MannyOnBrazzers/solunify",
+          },
+        ],
+        tags: ["Website", "Public"],
+        languages: [
+          { name: "CSS", percentage: 57.9 },
+          { name: "HTML", percentage: 42.1 },
+        ],
+      },
       {
         name: "Radar System",
         description: `Radar & Lidar system including a settings menu made for the CFX platform. Settings allows full control of the theme of the radar, and full scalability and position of all UI's on the clients screen. This entire system retrieves data from the CFX platform using Lua`,
